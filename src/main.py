@@ -1,10 +1,15 @@
 import datetime
+import os
+
 import pytz
+import configparser
+from pathlib import Path
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-# TOKEN del tuo bot ottenuto da BotFather
-TOKEN = "8719572868:AAHvWLMKRa1preEo8rMpwxV5H_9vHDCGeY8"
+
+# Caricamento token Telegram
+TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 # Lista compleanni (Giorno, Mese, Nome)
 BIRTHDAYS = [
